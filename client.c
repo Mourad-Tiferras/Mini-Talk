@@ -40,6 +40,20 @@ void	sender(char c, int pid)
 	}
 }
 
+static int _notnumiric(char* str)
+{
+	size_t		idx;
+
+	idx = 0;
+	while (*(str + idx) != '\0')
+	{
+		if ((str[idx] < '0' && str[idx] > '9'))
+			return (-1);
+		idx++;
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	int	pid;
@@ -47,7 +61,12 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_putstr("+++Error+++\n./client [PID] MESSAGE\n");
+		ft_putstr("+++Error+++\n./client [Server PID] MESSAGE\n");
+		exit(1);
+	}
+	if (_notnumiric(argv[1]) == -1)
+	{
+		ft_putstr("+++Error+++\n./client [Server PID] MESSAGE\n   [Server PID] is a Positive INT");
 		exit(1);
 	}
 	pid = ft_atoi(argv[1]);

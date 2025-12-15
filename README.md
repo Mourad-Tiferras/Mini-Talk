@@ -1,4 +1,4 @@
-# 42cursus project:  Minitalk
+# System Programming Project:  Minitalk
 
 ```
 			███╗   ███╗██╗███╗   ██╗██╗████████╗ █████╗ ██╗     ██╗██╗			
@@ -127,4 +127,5 @@ Keep in mind:
 
 
 > 💡 _“Minitalk teaches you how two processes can talk to each other without sockets — only with pure signals!”_
+
 

@@ -47,7 +47,7 @@ static int _notnumiric(char* str)
 	idx = 0;
 	while (*(str + idx) != '\0')
 	{
-		if ((str[idx] < '0' && str[idx] > '9'))
+		if ((str[idx] < '0' || str[idx] > '9'))
 			return (-1);
 		idx++;
 	}
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 	}
 	if (_notnumiric(argv[1]) == -1)
 	{
-		ft_putstr("+++Error+++\n./client [Server PID] MESSAGE\n   [Server PID] is a Positive INT");
+		ft_putstr("+++Error+++\n./client [Server PID] MESSAGE\n   [Server PID] is a Positive INT\n");
 		exit(1);
 	}
 	pid = ft_atoi(argv[1]);
